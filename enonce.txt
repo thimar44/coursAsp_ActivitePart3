@@ -1,0 +1,42 @@
+À vous de jouer !
+
+Pour cette activité, vous allez créer une petite application web qui va permettre de gérer une e-bibliothèque. L'objectif est de mettre en pratique ce que vous avez appris dans les trois premières parties du cours. Vous allez donc commencer en douceur et améliorerez votre application au fur et à mesure des activités de ce cours. Voici ce que vous devrez réaliser dans cette activité :
+
+    Créer un modèle très simple d’application pour gérer une e-blibliothèque et y inclure un échantillon de livres, d’auteurs et de clients
+    Ajouter des fonctionnalités à l’application pour afficher la liste de tous les livres, la liste de tous les auteurs et la liste de tous les livres d’un auteur.
+    Il vous faudra également permettre d’afficher le détail d’un livre.
+    Ajouter une fonctionnalité pour pouvoir rechercher des livres
+
+1. Créer le modèle pour gérer sa e-bibliothèque
+
+Comme je n’ai pas vraiment fait de cours sur Entity Framework, je vous demande de réaliser le modèle en dur dans le code. Avec un modèle en dur, vous créerez des propriétés statiques dans une classe Livres, ainsi que des méthodes vous permettant d’obtenir la liste de tous les livres, de tous les auteurs et de tous les clients.
+
+Quelques règles à mettre en place dans votre modèle :
+
+    1 auteur possède un identifiant et un nom
+    1 livre possède un identifiant, un titre, une date de parution, et un seul auteur
+    1 client possède un nom et un email. L’email est unique et identifie le client
+    1 client peut emprunter un livre et un livre ne peut être emprunté que par une seule personne à la fois
+
+Il vous faudra ajouter un échantillon de 5 livres de votre choix, avec 3 auteurs différents. Puis vous créerez 2 clients. En tout, 3 livres doivent être empruntés par 2 clients (donc un client empruntera 2 livres).
+2. Ajouter des fonctionnalités d’affichage
+
+Vous aurez plusieurs choses à réaliser. Il faudra permettre d'afficher :
+
+    la liste de tous les livres (titre + auteur) avec l'URL : /Afficher
+    la liste de tous les auteurs avec l'URL : /Afficher/Auteurs
+    la liste de tous les livres d’un auteur par son identifiant avec l'URL : /Afficher/Auteur/2
+    d’afficher un livre par son identifiant (titre + date de parution + emprunteur si existant) avec l'URL : /Afficher/Livre/3
+
+Remarque : pour l'affichage par identifiant, si l’identifiant n’existe pas dans le modèle, il faudra afficher une erreur. 
+3. Ajouter une fonctionnalité de recherche
+
+Ici vous allez introduire une fonctionnalité de recherche par mot-clé dans le titre des livres ainsi que dans les noms des auteurs. Par exemple, pour rechercher un livre dont le titre ou l’auteur contient le mot « abc »,  on utilisera l’URL : /Rechercher/Livre/abc.
+
+Remarque : on ne tiendra pas compte de la casse (pas de distinction entre les majuscules et les minuscules).
+
+Vous allez donc devoir réaliser le modèle, les contrôleurs et les vues pour votre e-bibliothèque. Pour l’instant, les actions ne se font que par l’intermédiaire des URL que je vous ai données en exemple.
+
+Vous enverrez le contenu des répertoires Models, Views et Controller dans un fichier .zip, en faisant bien attention à conserver l’arborescence des répertoires et des sous-répertoires. Attention, n'oubliez pas d'inclure aussi le ficher .sln.
+
+Bon courage ! 
