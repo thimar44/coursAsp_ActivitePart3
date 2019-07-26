@@ -1,0 +1,31 @@
+﻿@using coursAsp_ActivitePart3.Models
+@{
+    Layout = null;
+}
+@{
+    var livre = (Livre)ViewData["Livre"];
+    var emprunteur = (Client)ViewData["Emprunteur"];
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AfficherLivre</title>
+</head>
+<body>
+    <h2>Afficher un livre avec son Id</h2>
+    <h4>id : @livre.Id</h4>
+    <h4>Titre : @livre.Titre</h4>
+    <h4>Date de parution : @livre.DateDeParution.ToString("dd/MM/yyyy")</h4>
+    @if (@emprunteur == null)
+    {
+        <h4>Ce livre n'est actuellement pas emprunté</h4>
+    }
+    else
+    {
+        <h4>Emprunter par : @emprunteur.Nom </h4>
+    }
+
+</body>
+</html>

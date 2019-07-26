@@ -10,5 +10,13 @@ namespace coursAsp_ActivitePart3.Models
     {
         List<Livre> GetAllLivres();
         List<Auteur> GetAllAuteurs();
+        Auteur GetAuteurById(int idAuteur);
+        List<Livre> GetLivreByAuteur(Auteur auteur);
+        Livre GetLivreById(int idLivre);
+        Client GetEmprunteurByIdLivre(int idLivre);
+        List<Livre> SearchByAuteur(string input);
+        List<Livre> SearchByNom(string input);
+        List<Livre> SearchByNomAndAuteur(string input);
+
     }
 }

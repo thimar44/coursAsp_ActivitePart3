@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liste des livres de @ViewData["AuteurNom"]</title>
+</head>
+<body>
+    <h1>Liste des livres de @ViewData["AuteurNom"]</h1>
+    <table>
+        <tr>
+            <th>Livre Id</th>
+            <th>Titre</th>
+        </tr>
+        @foreach (coursAsp_ActivitePart3.Models.Livre Livre in ViewData["Livres"] as List<coursAsp_ActivitePart3.Models.Livre>)
+        {
+            <tr>
+                <td>@Livre.Id</td>
+                <td>@Livre.Titre</td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@using coursAsp_ActivitePart3.Models
+@{
+    Layout = null;
+}
+@{
+    var livres = (List<Livre>)ViewData["Livres"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Recherche de livres</title>
+</head>
+<body>
+    <h1>Résultats de la recherche : @ViewData["input"]</h1>
+    @if (livres.Count == 0)
+    {
+        <h4>Pas de résultats pour cette recherche</h4>
+    } else {
+    <table>
+        <tr>
+            <th>Livre Id</th>
+            <th>Titre</th>
+            <th>Auteur</th>
+        </tr>
+        @foreach (Livre Livre in ViewData["Livres"] as List<Livre>)
+        {
+            <tr>
+                <td>@Livre.Id</td>
+                <td>@Livre.Titre</td>
+                <td>@Livre.Auteur.Nom</td>
+            </tr>
+        }
+    </table>
+    }
+</body>
+</html>
